@@ -1,12 +1,9 @@
 # Law Enforcement Data Fairness & Bias Audit
 
-[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 
 A comprehensive data science project analyzing representation patterns in public law enforcement datasets to identify potential biases and skews across categories, geography, and time. **Features advanced weapons analysis in serious crimes.**
 
-![Dashboard Preview](docs/dashboard-preview.png)
 
 ##  Project Overview
 
