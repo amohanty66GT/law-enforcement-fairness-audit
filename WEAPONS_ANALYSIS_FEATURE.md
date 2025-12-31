@@ -27,11 +27,11 @@ The **Weapons in Serious Crimes Analysis** feature extends the fairness and bias
 ### 4. Interactive Visualizations
 
 #### Dashboard Components:
-- **📊 Weapon Distribution Chart**: Bar chart showing weapon categories in serious crimes
-- **📈 Comparison Chart**: Grouped bars comparing serious crimes vs all crimes
-- **⏰ Temporal Trends**: Line chart of weapon usage over time
-- **📍 Regional Patterns**: Heatmap of weapon usage by region
-- **📋 Data Quality Metrics**: Unknown weapon percentage tracking
+-  Weapon Distribution Chart**: Bar chart showing weapon categories in serious crimes
+-  Comparison Chart**: Grouped bars comparing serious crimes vs all crimes
+-  Temporal Trends**: Line chart of weapon usage over time
+-  Regional Patterns**: Heatmap of weapon usage by region
+-  Data Quality Metrics**: Unknown weapon percentage tracking
 
 #### Interactive Controls:
 - **Serious Crimes Only**: Toggle to filter for serious crimes
@@ -43,11 +43,11 @@ The **Weapons in Serious Crimes Analysis** feature extends the fairness and bias
 ## Ethical Framework
 
 ### Constraints Applied:
-- ✅ **Aggregate-only analysis** - No individual-level insights
-- ✅ **No tactical information** - Avoids operational details
-- ✅ **No predictions** - No individual-level forecasting
-- ✅ **Privacy protection** - No deanonymization
-- ✅ **Bias acknowledgment** - Clear limitations noted
+-  **Aggregate-only analysis** - No individual-level insights
+-  **No tactical information** - Avoids operational details
+-  **No predictions** - No individual-level forecasting
+-  **Privacy protection** - No deanonymization
+-  **Bias acknowledgment** - Clear limitations noted
 
 ### Ethical Safeguards:
 - **Reporting bias warnings** in all outputs
@@ -64,17 +64,6 @@ The **Weapons in Serious Crimes Analysis** feature extends the fairness and bias
 4. **Analysis**: Generate statistical summaries and trends
 5. **Visualization**: Create interactive charts and dashboards
 
-### Code Structure:
-```
-src/
-├── data_processing/
-│   └── feature_engineering.py    # Weapon extraction & categorization
-├── analysis/
-│   └── weapons_analysis.py       # Statistical analysis module
-└── dashboard/
-    ├── app.py                    # Main dashboard with weapons tab
-    └── visualizations.py         # Weapon-specific charts
-```
 
 ## Sample Results
 
@@ -110,7 +99,7 @@ py scripts/run_simple_analysis.py --data-source sample
 py scripts/start_simple_dashboard.py --port 8502
 
 # Navigate to: http://localhost:8502
-# Click on "🔫 Weapons Analysis" tab
+# Click on " Weapons Analysis" tab
 ```
 
 ### Configuration Options:
