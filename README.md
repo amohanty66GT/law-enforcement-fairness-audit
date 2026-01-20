@@ -4,7 +4,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A comprehensive data science project analyzing representation patterns in public law enforcement datasets to identify potential biases and skews across categories, geography, and time. **Features advanced weapons analysis in serious crimes.**
+A comprehensive data science project analyzing representation patterns in public law enforcement datasets to identify potential biases and skews across categories, geography, and time. **Features advanced weapons analysis and agent-based architecture.**
 
 ![Dashboard Preview](docs/dashboard-preview.png)
 
@@ -15,9 +15,17 @@ This system analyzes public law enforcement data to identify patterns in represe
 - **📈 Crime categories**: Representation of different offense types over time  
 - **⏰ Temporal trends**: How patterns change across years/quarters
 - **🔄 Case persistence**: Duration patterns by category
-- **🔫 Weapons analysis**: Weapon usage patterns in serious crimes *(NEW)*
+- **🔫 Weapons analysis**: Weapon usage patterns in serious crimes
+- **🤖 Agent-based architecture**: Modular, resilient analysis pipeline *(NEW)*
 
 ## 🚀 Key Features
+
+### Agent-Based Architecture (NEW)
+- **🤖 Modular agents** with single responsibilities
+- **🔄 Resilient pipeline** with graceful error handling
+- **📊 Transparent execution** with detailed logging and metrics
+- **🧪 Comprehensive testing** for each agent and integration
+- **🔧 Easy extensibility** for adding new analysis types
 
 ### Core Analysis
 - **Statistical bias detection** using chi-square tests and trend analysis
@@ -35,8 +43,26 @@ This system analyzes public law enforcement data to identify patterns in represe
 ### Ethical Framework
 - ✅ **Aggregate-only analysis** - No individual tracking or deanonymization
 - ✅ **No tactical insights** - Avoids operational intelligence
-- ✅ **Privacy protection** - Maintains ethical boundaries
+- ✅ **Privacy protection** - Maintains ethical boundaries with aggregation thresholds
 - ✅ **Transparency** - Clear methodology and limitations
+
+## 🤖 Agent Architecture
+
+The system uses 7 specialized agents that communicate via structured data objects:
+
+1. **🔄 Ingestion Agent** - Fetches data from FBI API with pagination and deduplication
+2. **✅ Validation & Drift Agent** - Validates data quality and detects distribution changes
+3. **🔫 Weapon Classification Agent** - Categorizes weapons using rule-based mapping
+4. **🚨 Serious Crime Filter Agent** - Identifies serious crimes consistently
+5. **📊 Statistical Analysis Agent** - Performs bias detection using statistical tests
+6. **📈 Trend & Anomaly Agent** - Analyzes temporal patterns and detects anomalies
+7. **📋 Reporting & Visualization Agent** - Generates privacy-compliant reports and charts
+
+**Benefits:**
+- **Resilience**: System continues if individual agents fail
+- **Modularity**: Each agent can be tested and modified independently
+- **Transparency**: Complete visibility into each processing step
+- **Extensibility**: Easy to add new analysis capabilities
 
 ## 📊 Data Sources
 
@@ -77,8 +103,18 @@ cp .env.example .env
 
 ### Run Analysis
 
+#### Agent-Based Analysis (Recommended)
 ```bash
-# Run complete analysis with sample data
+# Run modern agent-based analysis
+python scripts/run_agent_analysis.py --data-source sample --output-dir output
+
+# Compare traditional vs agent approaches
+python scripts/run_analysis_comparison.py --approach both
+```
+
+#### Traditional Analysis
+```bash
+# Run legacy monolithic analysis
 python scripts/run_simple_analysis.py --data-source sample
 
 # Results saved to output/ directory
@@ -90,7 +126,20 @@ python scripts/run_simple_analysis.py --data-source sample
 # Launch interactive dashboard
 python scripts/start_simple_dashboard.py --port 8502
 
-# Open browser to http://localhost:8502
+# Or use Streamlit directly
+streamlit run src/dashboard/app.py
+
+# Open browser to http://localhost:8501
+```
+
+### Testing
+
+```bash
+# Run agent integration tests
+python test_agent_integration.py
+
+# Run traditional analysis tests
+python test_analysis.py
 ```
 
 ### Using Make (Optional)
