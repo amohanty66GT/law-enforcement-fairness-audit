@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments — never copy these into the image
+venv/
+.venv/
+env/
+.env/
+
+# Environment files with secrets — use docker run --env-file instead
+.env
+
+# Git history
+.git/
+.gitignore
+
+# Output and data files — these are generated at runtime, not baked in
+output/
+test_output/
+comparison_output/
+data/*.db
+data/*.csv
+logs/
+
+# IDE and OS files
+.vscode/
+.idea/
+*.DS_Store
+Thumbs.db
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/

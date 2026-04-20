@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  # The Streamlit dashboard
+  dashboard:
+    build: .
+    ports:
+      # Maps port 8501 inside the container to 8501 on your machine.
+      # Format is "host_port:container_port"
+      - "8501:8501"
+    volumes:
+      # Mount the output and logs directories so data persists after the
+      # container stops. Without this, any files written inside the container
+      # are lost when it exits.
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./data:/app/data
+    env_file:
+      # Load environment variables from your .env file (API keys, config, etc.)
+      # The .env file is NOT copied into the image — it's injected at runtime.
+      - .env
+    restart: unless-stopped
+
+  # Run the agent-based analysis as a one-off job (not a long-running service)
+  analysis:
+    build: .
+    command: python scripts/run_agent_analysis.py --data-source sample --output-dir output
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./data:/app/data
+    env_file:
+      - .env
+    # "no" means this container won't restart automatically — it runs once and exits
+    restart: "no"
